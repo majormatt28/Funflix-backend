@@ -10,19 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_07_211659) do
+ActiveRecord::Schema.define(version: 2021_05_10_140929) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "movies", force: :cascade do |t|
-    t.integer "user_id"
     t.integer "api_id"
     t.string "title"
-    t.integer "year"
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "genre"
+    t.string "image"
+    t.string "release_date"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -32,14 +33,15 @@ ActiveRecord::Schema.define(version: 2021_05_07_211659) do
     t.string "comment"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "movie_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
-    t.string "password"
     t.integer "age"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "password_digest"
   end
 
 end
