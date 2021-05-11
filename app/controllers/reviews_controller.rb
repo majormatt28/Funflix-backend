@@ -11,7 +11,7 @@ class ReviewsController < ApplicationController
 
     def create
         review = Review.create!(review_params)
-        render json :review
+        render json: review
     end
 
     def edit
