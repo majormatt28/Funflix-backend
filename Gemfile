@@ -44,3 +44,4 @@ gem 'json'
 gem 'dotenv-rails'
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'activerecord-reset-pk-sequence'
+gem "jwt", "~> 2.2"
